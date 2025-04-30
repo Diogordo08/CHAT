@@ -9,13 +9,6 @@ socketio = SocketIO(app)
 def index():
     return render_template('index.html')
 
-# Rota para obter resultados da FURIA
-@app.route('/get_furia_results')
-def get_furia_results():
-    furia_matches = get_furia_match_results()
-    return jsonify(furia_matches)
-
-
 # Rota de recebimento e envio de mensagens
 @socketio.on('message')
 def handle_message(msg):
